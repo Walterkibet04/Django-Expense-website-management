@@ -14,12 +14,12 @@
                     {% csrf_token %}
                     {% include 'partials/messages.html' %}
                     <div class="form-group mb-3 ">
-                        <input type="text" name="username" placeholder="username" id="usernameField" class="form-control" value="{{fieldvalues.username}}">
+                        <input type="text" name="username" placeholder="username" id="usernameField" class="form-control" value="{{fieldValues.username}}">
                     </div>
                     <div class="invalid-feedback invalid-feedback" style="display: none;"></div>
                     <p class="text-sm text-success usernameSuccessOutput"></p>
                     <div class="form-group mb-3">
-                        <input type="email" name="email" placeholder="email" id="emailField" class="form-control" value="{{fieldvalues.email}}">
+                        <input type="email" name="email" placeholder="email" id="emailField" class="form-control" value="{{fieldValues.email}}">
                     </div>
                     <div class="emailFeedBackArea invalid-feedback" style="display: none;"></div>
                     <div class="form-group mb-3">
