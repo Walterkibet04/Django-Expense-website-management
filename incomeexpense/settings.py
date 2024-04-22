@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 import os
+import datetime
 from pathlib import Path
 from django.contrib import messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'expenses',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'incomeexpense.urls'
@@ -86,6 +89,11 @@ DATABASES = {
     }  
 }
 
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=1),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -134,10 +142,10 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-# email stuff
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'kibetwalter726@gmail.com'
-# EMAIL_USE_TLS = True
-# DEFAULT_FROM_EMAIL = 'kibetwalter726@gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_PASSWORD = 'hvqr hfve dosb epzn'
+#email stuff
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = ''
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = ''
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = 'hvqr hfve dosb epzn'
